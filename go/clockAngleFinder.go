@@ -77,6 +77,11 @@ func findDegrees(time []string) {
 }
 
 func main() {
+	
+	if len(os.Args) < 2{
+		fmt.Println("Please enter a valid time")
+		os.Exit(0)
+	}
 	//Call sanitizeInput method with input time as parameter.  We use 1: here to capture all arguments after the time (i.e if someone puts 9:00 AM instead of 9:00AM)
 	time := sanitizeInput(os.Args[1:])
 	//Call findDegrees method with return value from sanitizeInput
